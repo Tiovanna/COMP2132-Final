@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP2132 | Final Project</title>
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src ="../javascript/finalProj.js" defer="defer"></script>
+    <script src="../javascript/guessingPromptClass.js" defer="defer"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="/" id="navbar_logo"><img src="../images/logo.png" alt="Website logo"></a>
+            <div class="navbar_toggle" id="mobile_menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="/" class="navbar_links"> Fakelink1</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="/" class="navbar_links"> Fakelink2</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="/" class="navbar_links"> Fakelink3</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <h1 id="title_headline">COMP2132 | Final Project</h1>
+        <div id="workspace">
+            <div id="bubble-container">
+                <div class="part-break">
+                    <h3>Guess the lyric!</h3>
+                    <div id="output-parta"></div>
+                    <div id="wordDisplay"></div>
+                    <div class="keyboard">
+                        <div class="row" id="row1"></div>
+                        <div class="row" id="row2"></div>
+                        <div class="row" id="row3"></div>
+                    </div>
+                    <div id="game-container"></div>
+                </div>
+                
+                <div class="part-break">
+                    <div id="output-partb"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="code_section">
+            <p id="footer-text"></p>
+        </div>
+    </footer>
+</body>
+</html>

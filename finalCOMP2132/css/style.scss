@@ -1,0 +1,266 @@
+$primary-color: white;
+$secondary-color: lightblue;
+$background-dark: #131313;
+$font-stack: sans-serif;
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: $font-stack;
+}
+
+.press-start-2p-regular {
+    font-family: "Press Start 2P", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.navbar {
+    background: $background-dark;
+    height: 80px;
+    @include flex-center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    #navbar_logo {
+        background-size: 100%;
+        @include flex-center;
+        text-decoration: none;
+        font-size: 2rem;
+        color: $primary-color;
+
+        img {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin: 20px;
+        }
+
+        &:hover {
+            color: $secondary-color;
+            transition: all 0.3s ease;
+        }
+    }
+
+    #navbar_logo::after {
+        content: "Epic logo";
+    }
+}
+
+.navbar_container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.navbar_menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar_item {
+    height: 80px;
+}
+
+.navbar_links {
+    color: $primary-color;
+    @include flex-center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    &:hover {
+        color: $secondary-color;
+        transition: all 0.3s ease;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #navbar_logo::after {
+        content: none;
+    }
+    
+    .navbar_container {
+        padding: 0;
+    }
+    
+    .navbar_menu {
+        display: grid;
+        grid-template-columns: auto;
+        width: 100%;
+        position: absolute;
+        opacity: 1;
+        transition: all 0.5s ease;
+        height: 50vh;
+        background-color: $background-dark;
+    }
+
+    .navbar_menu.active {
+        top: 100%;
+        opacity: 1;
+        z-index: 99;
+    }
+}
+
+.image-grid {
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 1fr;
+    }
+    @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+    }
+}
+
+.code_section {
+    padding: 80px;
+    background-color: black;
+    color: $primary-color;
+    align-items: center;
+    p {
+        font-family: "Press Start 2P", sans-serif;
+        padding: 6px;
+        font-size: 18px;
+    }
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+}
+
+#workspace {
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    #bubble-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto;
+        gap: 10px;
+    }
+}
+
+.part-break {
+    padding: 20px;
+    border: 2px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    h2 {
+        padding-bottom: 10px;
+    }
+    img {
+        width: 100%;
+        max-width: 20vw;
+    }
+}
+
+.keyboard-container-id {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    max-width: 300px;
+    margin: auto;
+}
+
+.qwerty-btn {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #000;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 3px;
+    &:hover {
+        background-color: #ddd;
+    }
+    &.disabled {
+        background-color: #aaa;
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+    &.guess-correct {
+        background-color: lightgreen;
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+}
+
+.win-message, .lose-message {
+    text-align: center;
+    font-size: 1.5rem;
+    color: $primary-color;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.win-message {
+    background-color: green;
+}
+
+.lose-message {
+    background-color: red;
+}
+
+.play-again-btn {
+    background-color: $primary-color;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    &:hover {
+        background-color: lightgray;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 1s forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
